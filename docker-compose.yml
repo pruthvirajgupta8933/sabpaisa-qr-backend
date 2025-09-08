@@ -24,16 +24,19 @@ services:
       - sabpaisa-network
     restart: unless-stopped
 
-  postgres:
-    image: postgres:14-alpine
-    container_name: sabpaisa-postgres
+  mysql:
+    image: mysql:8.0
+    container_name: sabpaisa-mysql
     environment:
-      - POSTGRES_USER=${DB_USER:-sabpaisa}
-      - POSTGRES_PASSWORD=${DB_PASSWORD:-sabpaisa123}
-      - POSTGRES_DB=${DB_NAME:-sabpaisa_qr}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-sabpaisa123}
+      - MYSQL_DATABASE=${DB_NAME:-sabpaisa_qr}
+      - MYSQL_USER=${DB_USER:-sabpaisa}
+      - MYSQL_PASSWORD=${DB_PASSWORD:-sabpaisa123}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
     networks:
       - sabpaisa-network
     restart: unless-stopped
@@ -43,4 +46,4 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data:
+  mysql_data:
