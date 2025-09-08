@@ -1,0 +1,204 @@
+{
+  "timestamp": "2025-09-08T12:17:59.932Z",
+  "frontend": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "tests": [
+      {
+        "name": "Bulk QR Generator Component",
+        "passed": true,
+        "path": "src/components/bulkQR/BulkQRGenerator.jsx"
+      },
+      {
+        "name": "Bulk QR Styles",
+        "passed": true,
+        "path": "src/components/bulkQR/BulkQRGenerator.css"
+      },
+      {
+        "name": "Static QR Component",
+        "passed": true,
+        "path": "src/components/dashboard/AllPages/static-qr/StaticQR.js"
+      },
+      {
+        "name": "QR Generation",
+        "passed": true,
+        "path": "src/components/dashboard/AllPages/static-qr/QRGeneration.js"
+      },
+      {
+        "name": "QR Management",
+        "passed": true,
+        "path": "src/components/dashboard/AllPages/static-qr/QRManagement.js"
+      },
+      {
+        "name": "QR Payments",
+        "passed": true,
+        "path": "src/components/dashboard/AllPages/static-qr/QRPayments.js"
+      },
+      {
+        "name": "Redux QR Slice",
+        "passed": true,
+        "path": "src/slices/sabqr/sabqrSlice.js"
+      },
+      {
+        "name": "QR Service Layer",
+        "passed": true,
+        "path": "src/services/sabqr/sabqr.service.js"
+      }
+    ]
+  },
+  "backend": {
+    "total": 6,
+    "passed": 3,
+    "failed": 3,
+    "tests": [
+      {
+        "name": "Health Check API",
+        "passed": true,
+        "response": {
+          "success": true,
+          "data": {
+            "status": "OK",
+            "service": "HDFC Webhook Server",
+            "timestamp": "2025-09-08T12:17:59.978Z",
+            "environment": "development",
+            "webhookUrl": "https://api.sabpaisa.in/api/hdfc/webhook"
+          },
+          "status": 200
+        }
+      },
+      {
+        "name": "QR Generation API",
+        "passed": true,
+        "response": {
+          "success": true,
+          "data": {
+            "success": true,
+            "data": {
+              "qr_id": "97d0855948e6bbe2",
+              "qr_image": "data:image/png;base64,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",
+              "vpa": "integrat.test_merch_001@hdfc",
+              "upi_string": "upi://pay?pa=integrat.test_merch_001@hdfc&pn=Integration%20Test%20Merchant&tn=Integration%20Test%20Payment&cu=INR&mc=6012&tr=APITEST_MERCH_001879980&mode=01&am=999.99",
+              "transaction_ref": "APITEST_MERCH_001879980",
+              "amount": "999.99"
+            }
+          },
+          "status": 200
+        }
+      },
+      {
+        "name": "Bulk QR Generation API",
+        "passed": true,
+        "response": {
+          "success": true,
+          "data": {
+            "success": true,
+            "total": 3,
+            "successful": 0,
+            "failed": 3,
+            "results": [],
+            "errors": [
+              {
+                "merchant_id": "BULK_TEST_001",
+                "error": "Missing required fields: reference_name"
+              },
+              {
+                "merchant_id": "BULK_TEST_002",
+                "error": "Missing required fields: reference_name"
+              },
+              {
+                "merchant_id": "BULK_TEST_003",
+                "error": "Missing required fields: reference_name"
+              }
+            ]
+          },
+          "status": 200
+        }
+      },
+      {
+        "name": "List QR Codes API",
+        "passed": false,
+        "response": {
+          "success": false,
+          "error": {
+            "success": false,
+            "error": "Failed to fetch QR codes",
+            "code": "FETCH_ERROR"
+          },
+          "status": 500
+        }
+      },
+      {
+        "name": "Transactions API",
+        "passed": false,
+        "response": {
+          "success": false,
+          "error": {
+            "success": false,
+            "error": "Failed to fetch transactions",
+            "code": "FETCH_ERROR"
+          },
+          "status": 500
+        }
+      },
+      {
+        "name": "Analytics API",
+        "passed": false,
+        "response": {
+          "success": false,
+          "error": {
+            "success": false,
+            "error": "Failed to fetch analytics",
+            "code": "ANALYTICS_ERROR"
+          },
+          "status": 500
+        }
+      }
+    ]
+  },
+  "integration": {
+    "total": 4,
+    "passed": 3,
+    "failed": 1,
+    "tests": [
+      {
+        "name": "Webhook Integration",
+        "passed": false,
+        "response": {
+          "success": false,
+          "error": {
+            "status": "FAILED",
+            "message": "Missing encrypted data",
+            "timestamp": "2025-09-08T12:18:00.021Z"
+          },
+          "status": 400
+        }
+      },
+      {
+        "name": "Rate Limiting",
+        "passed": true,
+        "hasRateLimit": false
+      },
+      {
+        "name": "Authentication System",
+        "passed": true,
+        "response": 401
+      },
+      {
+        "name": "CORS Configuration",
+        "passed": true,
+        "response": {
+          "x-powered-by": "Express",
+          "access-control-allow-origin": "*",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-methods": "GET,POST,PUT,DELETE,OPTIONS",
+          "access-control-allow-headers": "Content-Type,X-API-Key,X-API-Secret",
+          "content-length": "0",
+          "date": "Mon, 08 Sep 2025 12:18:00 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        }
+      }
+    ]
+  }
+}

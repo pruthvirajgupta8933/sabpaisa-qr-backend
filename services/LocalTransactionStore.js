@@ -182,6 +182,55 @@ class LocalTransactionStore {
 
     // =================== Bulk QR Methods ===================
     
+    // Get QR codes by merchant
+    async getQRCodesByMerchant(merchantId) {
+        try {
+            const qrCodes = this.getQRCodes();
+            // Return mock data if no QR codes exist
+            if (qrCodes.length === 0) {
+                return [
+                    {
+                        qr_id: 'qr_demo_001',
+                        merchant_id: merchantId,
+                        merchant_name: 'Demo Merchant',
+                        amount: 100.00,
+                        vpa: `demo.${merchantId}@hdfc`,
+                        status: 'active',
+                        created_at: new Date().toISOString()
+                    }
+                ];
+            }
+            return qrCodes.filter(q => q.merchant_id === merchantId || q.api_key_id === merchantId);
+        } catch (error) {
+            console.error('Error getting QR codes by merchant:', error);
+            return [];
+        }
+    }
+
+    // Get transactions by merchant
+    async getTransactionsByMerchant(merchantId) {
+        try {
+            const transactions = this.getTransactions();
+            // Return mock data if no transactions exist
+            if (transactions.length === 0) {
+                return [
+                    {
+                        transaction_id: 'TXN_DEMO_001',
+                        merchant_id: merchantId,
+                        amount: 100.00,
+                        status: 'success',
+                        payer_vpa: 'customer@upi',
+                        timestamp: new Date().toISOString()
+                    }
+                ];
+            }
+            return transactions.filter(t => t.merchant_id === merchantId);
+        } catch (error) {
+            console.error('Error getting transactions by merchant:', error);
+            return [];
+        }
+    }
+    
     // Save QR code
     async saveQRCode(qrData) {
         try {
