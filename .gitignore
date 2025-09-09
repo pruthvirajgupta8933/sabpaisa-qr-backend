@@ -6,3 +6,5 @@ data/*.json
 dist/
 build/
 .DS_Store
+.git-credentials
+git-askpass.sh
